@@ -1,0 +1,48 @@
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading"><strong>Serie Fibonacci</strong>
+			</div>
+			<div class="panel-body">
+				<input id="numero" name="numeros" class="form-control" type="number" placeholder="ingresa un numero">
+				<button class="btn btn-success" onclick="fibonacci()">	Generar serie fibonacci</button>
+			</div>
+            <div class="panel-footer" id="resultado" style="word-wrap: break-word;"></div>
+			
+		</div>	
+	</div>
+</body>
+
+<script type="text/Javascript">
+    function fibonacci(){
+	var x = 0;
+	var valor = document.getElementById('numero').value;
+	var arreglo = [];
+	valor = parseInt(valor);
+	for (x; x<valor; x++){
+		if(x==0){
+			arreglo.push(0);
+		}
+		else if(x==1){
+			arreglo.push(1);
+		}
+		else{
+			arreglo.push(arreglo[x-1]+arreglo[x-2]);
+		}
+	}
+	document.getElementById("resultado").innerHTML ="<h3>"+arreglo+"</h3>";
+}
+
+</script>
+</html>
+
+
+
